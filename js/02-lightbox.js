@@ -8,7 +8,7 @@ const galleryRef = document.querySelector('.gallery');
 galleryRef.innerHTML = galleryItems
   .map(({preview, original, description}) => {
     return `
-    <div class = "gallery__item">
+    <li class = "gallery__item">
     <a class = "gallery__link" href= "${original}">
     <img  
     class = "gallery__image" 
@@ -16,7 +16,7 @@ galleryRef.innerHTML = galleryItems
     src = ${preview} 
     alt = "${description}">
     </a>
-    </div>
+    </li>
     `;
   })
   .join('');
@@ -25,6 +25,6 @@ galleryRef.innerHTML = galleryItems
 const lightbox = new SimpleLightbox('.gallery a', {
     captionPosition: 'bottom',
     captionsData: 'alt',
-    captionsDelay: 250,
+    captionDelay: 250,
 });
 
